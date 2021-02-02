@@ -1,0 +1,12 @@
+#github "SwiftyBeaver/SwiftyBeaver"
+#github "jonkykong/SideMenu" "master"
+#github "SDWebImage/SDWebImage"
+#github "AssistoLab/DropDown"
+#github "WenchaoD/FSCalendar"
+#github "tristanhimmelman/ObjectMapper"
+#github "Skyscanner/SkyFloatingLabelTextField"
+
+#github "Alamofire/Alamofire" ~> 5.2
+#github "danielgindi/Charts" ~> 3.5.0
+#github "SwipeCellKit/SwipeCellKit"
+github "ReactiveX/RxSwift" ~> 5.0

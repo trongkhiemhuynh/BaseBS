@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TicketDetailInfoCollectionViewCell" customModule="BaseBS_CRM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJz-p3-HVV">
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="120"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r20-f2-N2c">
+                                <rect key="frame" x="10" y="25" width="70" height="70"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="r20-f2-N2c" secondAttribute="height" multiplier="1:1" id="NhO-xK-Lsj"/>
+                                    <constraint firstAttribute="width" constant="70" id="QsW-ex-cDr"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="id2-5E-CBn">
+                                <rect key="frame" x="100" y="0.0" width="315" height="120"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-My-wJf">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="120"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steve Huynh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJL-sM-nHO">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Software Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYu-Mf-vTv">
+                                                <rect key="frame" x="0.0" y="40" width="315" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID: 787878787" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbS-eb-1wA">
+                                                <rect key="frame" x="0.0" y="80" width="315" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.039215686274509803" green="0.69803921568627447" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="id2-5E-CBn" secondAttribute="bottom" id="1qF-mC-4V8"/>
+                            <constraint firstItem="id2-5E-CBn" firstAttribute="leading" secondItem="TJz-p3-HVV" secondAttribute="leading" constant="100" id="Vhq-4u-8mV"/>
+                            <constraint firstItem="r20-f2-N2c" firstAttribute="leading" secondItem="TJz-p3-HVV" secondAttribute="leading" constant="10" id="b4x-rr-fY3"/>
+                            <constraint firstItem="r20-f2-N2c" firstAttribute="centerY" secondItem="TJz-p3-HVV" secondAttribute="centerY" id="nfw-ne-qvu"/>
+                            <constraint firstAttribute="trailing" secondItem="id2-5E-CBn" secondAttribute="trailing" id="p8B-CH-HuN"/>
+                            <constraint firstItem="id2-5E-CBn" firstAttribute="top" secondItem="TJz-p3-HVV" secondAttribute="top" id="vh1-dj-gsq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="TJz-p3-HVV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cw9-RZ-AYW"/>
+                <constraint firstAttribute="trailing" secondItem="TJz-p3-HVV" secondAttribute="trailing" id="ElH-3W-vZA"/>
+                <constraint firstItem="TJz-p3-HVV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OzW-Bf-OtA"/>
+                <constraint firstAttribute="bottom" secondItem="TJz-p3-HVV" secondAttribute="bottom" id="TS4-Xp-6lS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="415" height="348"/>
+            <connections>
+                <outlet property="iv" destination="r20-f2-N2c" id="IhB-Xq-0tO"/>
+                <outlet property="lblID" destination="AbS-eb-1wA" id="AB7-a3-qsA"/>
+                <outlet property="lblJob" destination="fYu-Mf-vTv" id="MJO-HW-uoj"/>
+                <outlet property="lblName" destination="cJL-sM-nHO" id="gHy-hY-8dn"/>
+            </connections>
+            <point key="canvasLocation" x="-304" y="104"/>
+        </collectionViewCell>
+    </objects>
+</document>

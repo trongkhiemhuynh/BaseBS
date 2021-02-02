@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardController" customModule="BaseBS_CRM" customModuleProvider="target">
+            <connections>
+                <outlet property="btnAddMoreItem" destination="OKX-Bx-jzk" id="sWo-u3-RPK"/>
+                <outlet property="lblCountNotification" destination="UvP-mC-qap" id="e6E-A5-1Ky"/>
+                <outlet property="vContent" destination="WBY-B3-oJo" id="u3f-Wt-WVY"/>
+                <outlet property="view" destination="Rzn-lP-3Bj" id="xuz-Sc-rdE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Rzn-lP-3Bj">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBY-B3-oJo">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amo-Wd-Jxv">
+                    <rect key="frame" x="260" y="20" width="40" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC3-Nh-kUJ">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                            <state key="normal" image="alert"/>
+                            <connections>
+                                <action selector="didTapAlert" destination="-1" eventType="touchUpInside" id="MRw-kq-LN7"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvP-mC-qap">
+                            <rect key="frame" x="25" y="0.0" width="15" height="15"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="UvP-mC-qap" secondAttribute="height" multiplier="1:1" id="1Ln-v3-nHI"/>
+                                <constraint firstAttribute="width" constant="15" id="1c4-lE-8oq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="sC3-Nh-kUJ" firstAttribute="centerY" secondItem="amo-Wd-Jxv" secondAttribute="centerY" id="3Kf-m5-GL4"/>
+                        <constraint firstAttribute="height" constant="30" id="KT1-7L-5ru"/>
+                        <constraint firstAttribute="width" constant="40" id="Nox-rW-dHf"/>
+                        <constraint firstItem="UvP-mC-qap" firstAttribute="top" secondItem="amo-Wd-Jxv" secondAttribute="top" id="U3w-IV-2kl"/>
+                        <constraint firstAttribute="trailing" secondItem="sC3-Nh-kUJ" secondAttribute="trailing" id="UPI-Ec-Y0P"/>
+                        <constraint firstAttribute="trailing" secondItem="UvP-mC-qap" secondAttribute="trailing" id="WDR-gF-aac"/>
+                        <constraint firstItem="sC3-Nh-kUJ" firstAttribute="centerX" secondItem="amo-Wd-Jxv" secondAttribute="centerX" id="aKi-le-CCA"/>
+                        <constraint firstItem="sC3-Nh-kUJ" firstAttribute="top" secondItem="amo-Wd-Jxv" secondAttribute="top" id="jUW-bt-cxE"/>
+                        <constraint firstAttribute="bottom" secondItem="sC3-Nh-kUJ" secondAttribute="bottom" id="neI-PP-yxa"/>
+                        <constraint firstItem="sC3-Nh-kUJ" firstAttribute="leading" secondItem="amo-Wd-Jxv" secondAttribute="leading" id="qlp-al-wij"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-Cn-TgM">
+                    <rect key="frame" x="20" y="10" width="40" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Ogy-W8-qX7"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="i4K-a1-cGt"/>
+                    </constraints>
+                    <state key="normal" image="hamburgermenu"/>
+                    <connections>
+                        <action selector="didTapMenu" destination="-1" eventType="touchUpInside" id="hA8-QA-K3G"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKX-Bx-jzk">
+                    <rect key="frame" x="240" y="340" width="70" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="BT1-mf-t9z"/>
+                        <constraint firstAttribute="width" secondItem="OKX-Bx-jzk" secondAttribute="height" multiplier="1:1" id="NEc-et-Agq"/>
+                    </constraints>
+                    <state key="normal" image="add_new"/>
+                    <connections>
+                        <action selector="onAddMore" destination="-1" eventType="touchUpInside" id="YXa-Fw-NfD"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="i74-L8-Ksq" firstAttribute="bottom" secondItem="WBY-B3-oJo" secondAttribute="bottom" id="DIv-v9-Cb9"/>
+                <constraint firstItem="WBY-B3-oJo" firstAttribute="top" secondItem="Rzn-lP-3Bj" secondAttribute="top" id="KPp-4e-1Tz"/>
+                <constraint firstItem="i74-L8-Ksq" firstAttribute="trailing" secondItem="WBY-B3-oJo" secondAttribute="trailing" id="Vqe-RV-z7H"/>
+                <constraint firstItem="i74-L8-Ksq" firstAttribute="trailing" secondItem="amo-Wd-Jxv" secondAttribute="trailing" constant="20" id="aCy-ak-dDF"/>
+                <constraint firstItem="eVg-Cn-TgM" firstAttribute="leading" secondItem="i74-L8-Ksq" secondAttribute="leading" constant="20" id="aNT-oe-MiQ"/>
+                <constraint firstItem="eVg-Cn-TgM" firstAttribute="top" secondItem="i74-L8-Ksq" secondAttribute="top" constant="10" id="b6b-ol-zHn"/>
+                <constraint firstItem="WBY-B3-oJo" firstAttribute="leading" secondItem="i74-L8-Ksq" secondAttribute="leading" id="bOG-Hd-mkM"/>
+                <constraint firstItem="i74-L8-Ksq" firstAttribute="trailing" secondItem="OKX-Bx-jzk" secondAttribute="trailing" constant="10" id="dxn-TI-62M"/>
+                <constraint firstItem="amo-Wd-Jxv" firstAttribute="top" secondItem="i74-L8-Ksq" secondAttribute="top" constant="20" id="fML-Za-quY"/>
+                <constraint firstItem="i74-L8-Ksq" firstAttribute="bottom" secondItem="OKX-Bx-jzk" secondAttribute="bottom" constant="70" id="xF3-To-UKx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="i74-L8-Ksq"/>
+            <point key="canvasLocation" x="55" y="102"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_new" width="102" height="102"/>
+        <image name="alert" width="22" height="22"/>
+        <image name="hamburgermenu" width="24" height="16"/>
+    </resources>
+</document>

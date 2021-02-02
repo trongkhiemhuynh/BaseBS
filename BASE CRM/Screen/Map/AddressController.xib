@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressController" customModule="BaseBS_CRM" customModuleProvider="target">
+            <connections>
+                <outlet property="vMap" destination="9tn-qw-oDQ" id="n7H-px-Chr"/>
+                <outlet property="vPager" destination="dUH-5J-HYZ" id="Ynn-k5-lnx"/>
+                <outlet property="vTitle" destination="3Fs-Ig-JAu" id="Rce-TC-ObZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tn-qw-oDQ" customClass="MapView" customModule="BaseBS_CRM" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fs-Ig-JAu" customClass="CustomTitleView" customModule="BaseBS_CRM" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="68" id="zih-KO-3RK"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-5J-HYZ" customClass="BASEPager" customModule="BaseBS_CRM" customModuleProvider="target">
+                    <rect key="frame" x="16" y="508" width="343" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="2Ly-mu-S2C"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrF-4d-kZe">
+                    <rect key="frame" x="301" y="454" width="54" height="54"/>
+                    <state key="normal" image="back"/>
+                    <connections>
+                        <action selector="onBack" destination="-1" eventType="touchUpInside" id="hI1-ta-sdP"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3Fs-Ig-JAu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0hZ-3V-BRA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UrF-4d-kZe" secondAttribute="trailing" constant="20" id="0mb-fM-c4j"/>
+                <constraint firstItem="9tn-qw-oDQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2vr-2f-Ndu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dUH-5J-HYZ" secondAttribute="bottom" constant="70" id="3fS-qD-OdF"/>
+                <constraint firstItem="9tn-qw-oDQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3v5-k5-aEa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9tn-qw-oDQ" secondAttribute="bottom" id="8su-G9-NBA"/>
+                <constraint firstItem="3Fs-Ig-JAu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pzz-kY-D1G"/>
+                <constraint firstItem="dUH-5J-HYZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QJg-R2-bJq"/>
+                <constraint firstItem="3Fs-Ig-JAu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TDZ-VS-T99"/>
+                <constraint firstItem="dUH-5J-HYZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="WNJ-p5-mms"/>
+                <constraint firstItem="dUH-5J-HYZ" firstAttribute="top" secondItem="UrF-4d-kZe" secondAttribute="bottom" id="Wmz-mW-6WP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9tn-qw-oDQ" secondAttribute="trailing" id="vuF-K5-b8S"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="54" height="54"/>
+    </resources>
+</document>

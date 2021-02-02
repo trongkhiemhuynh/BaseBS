@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="BaseBS_CRM" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCheckbox" destination="00h-t9-F0y" id="1Ch-ey-6HN"/>
+                <outlet property="btnLogin" destination="hAc-TF-Iu7" id="ahd-wR-oEc"/>
+                <outlet property="tfPassword" destination="fRy-Wt-JQT" id="7P9-Yx-e86"/>
+                <outlet property="tfUserName" destination="8sH-t6-iTI" id="pPu-U6-xIC"/>
+                <outlet property="view" destination="iN0-l3-epB" id="jvi-hb-rbj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mc-e4-YjV">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="105" translatesAutoresizingMaskIntoConstraints="NO" id="arY-85-cua">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_login" translatesAutoresizingMaskIntoConstraints="NO" id="TLE-Ou-9OW">
+                            <rect key="frame" x="107" y="100" width="200" height="175"/>
+                        </imageView>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvQ-0X-YN3">
+                            <rect key="frame" x="56" y="507" width="104" height="27"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                            <state key="normal" title="Keep me logged in">
+                                <color key="titleColor" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="actionCheck" destination="-1" eventType="touchUpInside" id="7m0-sK-KF5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAc-TF-Iu7">
+                            <rect key="frame" x="40" y="453" width="334" height="50"/>
+                            <color key="backgroundColor" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="err-ui-7b8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="LOGIN">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="LT5-4c-5Tr"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sH-t6-iTI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <rect key="frame" x="40" y="306" width="334" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="S0G-aW-b7a"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                    <color key="value" red="0.039215686274509803" green="0.69803921568627447" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                    <color key="value" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRy-Wt-JQT" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <rect key="frame" x="40" y="372" width="334" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="8eu-kX-YaV"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                    <color key="value" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                    <color key="value" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-F9-DJ7">
+                            <rect key="frame" x="271" y="507" width="103" height="27"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                            <state key="normal" title="Forgot password? ">
+                                <color key="titleColor" red="0.039215686270000001" green="0.69803921570000005" blue="0.6588235294" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00h-t9-F0y">
+                            <rect key="frame" x="38" y="513.66666666666663" width="14" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14" id="H46-rV-erE"/>
+                                <constraint firstAttribute="height" constant="14" id="Wrq-H7-sTg"/>
+                            </constraints>
+                            <state key="normal" image="check_box"/>
+                            <connections>
+                                <action selector="actionCheck" destination="-1" eventType="touchUpInside" id="0jZ-Gu-2KT"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hlt-Ax-2Cg">
+                            <rect key="frame" x="146" y="36" width="122" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="Ymx-7u-xPN"/>
+                                <constraint firstAttribute="width" constant="122" id="kOx-Rn-oom"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="arY-85-cua" firstAttribute="top" secondItem="6mc-e4-YjV" secondAttribute="top" id="0Od-Zj-rLC"/>
+                        <constraint firstItem="XMG-F9-DJ7" firstAttribute="trailing" secondItem="hAc-TF-Iu7" secondAttribute="trailing" id="0o2-Zn-Hkn"/>
+                        <constraint firstItem="8sH-t6-iTI" firstAttribute="centerX" secondItem="6mc-e4-YjV" secondAttribute="centerX" id="32a-bc-KdT"/>
+                        <constraint firstAttribute="trailing" secondItem="arY-85-cua" secondAttribute="trailing" id="5sV-Fp-78x"/>
+                        <constraint firstItem="00h-t9-F0y" firstAttribute="centerY" secondItem="vvQ-0X-YN3" secondAttribute="centerY" id="68p-86-gyD"/>
+                        <constraint firstItem="Hlt-Ax-2Cg" firstAttribute="centerX" secondItem="6mc-e4-YjV" secondAttribute="centerX" id="9uX-Fh-HkT"/>
+                        <constraint firstItem="vvQ-0X-YN3" firstAttribute="leading" secondItem="hAc-TF-Iu7" secondAttribute="leading" constant="16" id="GoM-lD-I1M"/>
+                        <constraint firstItem="TLE-Ou-9OW" firstAttribute="centerX" secondItem="6mc-e4-YjV" secondAttribute="centerX" id="JXx-oV-rGu"/>
+                        <constraint firstItem="fRy-Wt-JQT" firstAttribute="top" secondItem="8sH-t6-iTI" secondAttribute="bottom" constant="16" id="Ome-Wi-Z1c"/>
+                        <constraint firstItem="TLE-Ou-9OW" firstAttribute="top" secondItem="6mc-e4-YjV" secondAttribute="top" constant="100" id="RlP-kj-JFq"/>
+                        <constraint firstItem="XMG-F9-DJ7" firstAttribute="top" secondItem="hAc-TF-Iu7" secondAttribute="bottom" constant="4" id="Sfw-sI-p9e"/>
+                        <constraint firstItem="hAc-TF-Iu7" firstAttribute="leading" secondItem="6mc-e4-YjV" secondAttribute="leading" constant="40" id="TMp-FP-2m7"/>
+                        <constraint firstAttribute="trailing" secondItem="hAc-TF-Iu7" secondAttribute="trailing" constant="40" id="U0n-Fs-Crp"/>
+                        <constraint firstAttribute="bottom" secondItem="arY-85-cua" secondAttribute="bottom" id="aOC-RU-e3W"/>
+                        <constraint firstAttribute="trailing" secondItem="fRy-Wt-JQT" secondAttribute="trailing" constant="40" id="cxD-3L-e6B"/>
+                        <constraint firstAttribute="trailing" secondItem="8sH-t6-iTI" secondAttribute="trailing" constant="40" id="eFZ-UN-hmm"/>
+                        <constraint firstItem="vvQ-0X-YN3" firstAttribute="leading" secondItem="00h-t9-F0y" secondAttribute="trailing" constant="4" id="eop-Uz-h8j"/>
+                        <constraint firstItem="8sH-t6-iTI" firstAttribute="top" secondItem="TLE-Ou-9OW" secondAttribute="bottom" constant="31" id="f34-bZ-Use"/>
+                        <constraint firstItem="vvQ-0X-YN3" firstAttribute="top" secondItem="hAc-TF-Iu7" secondAttribute="bottom" constant="4" id="fkb-zc-pgw"/>
+                        <constraint firstItem="TLE-Ou-9OW" firstAttribute="top" secondItem="Hlt-Ax-2Cg" secondAttribute="bottom" constant="16" id="k8s-hh-TIZ"/>
+                        <constraint firstItem="8sH-t6-iTI" firstAttribute="leading" secondItem="6mc-e4-YjV" secondAttribute="leading" constant="40" id="oS6-MA-6Dj"/>
+                        <constraint firstItem="fRy-Wt-JQT" firstAttribute="leading" secondItem="6mc-e4-YjV" secondAttribute="leading" constant="40" id="rqM-U9-vex"/>
+                        <constraint firstItem="arY-85-cua" firstAttribute="leading" secondItem="6mc-e4-YjV" secondAttribute="leading" id="rxl-e3-q4f"/>
+                        <constraint firstItem="hAc-TF-Iu7" firstAttribute="top" secondItem="fRy-Wt-JQT" secondAttribute="bottom" constant="31" id="uDn-ny-rh6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6mc-e4-YjV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9TX-4H-3x5"/>
+                <constraint firstAttribute="bottom" secondItem="6mc-e4-YjV" secondAttribute="bottom" id="dNM-HV-aDk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6mc-e4-YjV" secondAttribute="trailing" id="n4K-s4-9TS"/>
+                <constraint firstItem="6mc-e4-YjV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tNk-7f-D2B"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-300" y="178.79464285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="105" width="806" height="682"/>
+        <image name="check_box" width="11" height="11"/>
+        <image name="img_login" width="200" height="175"/>
+        <image name="img_logo" width="122" height="48"/>
+    </resources>
+</document>
