@@ -196,14 +196,17 @@ extension CustomView {
     @IBAction func addNewView() {
         print("addnew")
         
-        let controller = UIViewController()
+        /*let controller = UIViewController()
         
         let add = AddNewCustomView.xibInstance()
         add.controller = controller
         add.objectId = objectId
         controller.view.addSubview(add)
         add.frame = controller.view.bounds
+        */
         
+        let controller = NewCustomViewController()
+        controller.objectId = objectId
         self.controller?.navigationController?.pushViewController(controller, animated: true)
     }
 }

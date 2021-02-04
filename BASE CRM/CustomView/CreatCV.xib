@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaR-gO-lnh">
+                    <rect key="frame" x="0.0" y="13" width="320" height="467"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Lqj-sW-Zb1">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfY-IR-osT">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                    <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kE3-2i-JjU">
+                                    <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Lqj-sW-Zb1" firstAttribute="top" secondItem="qaR-gO-lnh" secondAttribute="top" id="8FJ-Wu-X2Y"/>
+                        <constraint firstItem="Lqj-sW-Zb1" firstAttribute="leading" secondItem="Mpn-Cw-WPC" secondAttribute="leading" id="Fww-w5-nT8"/>
+                        <constraint firstItem="Mpn-Cw-WPC" firstAttribute="trailing" secondItem="Lqj-sW-Zb1" secondAttribute="trailing" id="L1K-CY-JTD"/>
+                        <constraint firstItem="Mpn-Cw-WPC" firstAttribute="bottom" secondItem="Lqj-sW-Zb1" secondAttribute="bottom" id="PnZ-Xd-EhD"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="od8-Zg-Cou"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Mpn-Cw-WPC"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qaR-gO-lnh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Bv1-nD-U7Q"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="qaR-gO-lnh" secondAttribute="bottom" id="DKE-6R-MGo"/>
+                <constraint firstItem="qaR-gO-lnh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HWf-c4-rVv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qaR-gO-lnh" secondAttribute="trailing" id="qGh-5H-e8P"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.25" y="122.5"/>
+        </view>
+    </objects>
+</document>

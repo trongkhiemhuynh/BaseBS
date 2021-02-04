@@ -179,6 +179,7 @@
 		C27F374025C9DEC9004CC887 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F373E25C9DEC9004CC887 /* CustomView.swift */; };
 		C27F374325C9DF63004CC887 /* AddActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F374125C9DF63004CC887 /* AddActionCollectionViewCell.swift */; };
 		C27F374425C9DF63004CC887 /* AddActionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27F374225C9DF63004CC887 /* AddActionCollectionViewCell.xib */; };
+		C27F374625CAFAF5004CC887 /* CreatCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = C27F374525CAFAF4004CC887 /* CreatCV.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -357,6 +358,7 @@
 		C27F373E25C9DEC9004CC887 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		C27F374125C9DF63004CC887 /* AddActionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActionCollectionViewCell.swift; sourceTree = "<group>"; };
 		C27F374225C9DF63004CC887 /* AddActionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddActionCollectionViewCell.xib; sourceTree = "<group>"; };
+		C27F374525CAFAF4004CC887 /* CreatCV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatCV.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +451,7 @@
 				C27F35A525C30ED3004CC887 /* Cell */,
 				C27F35A125C30CF7004CC887 /* NewCustomViewController.swift */,
 				C27F35A225C30CF7004CC887 /* NewCustomViewController.xib */,
+				C27F374525CAFAF4004CC887 /* CreatCV.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -928,6 +931,7 @@
 				C27F35A425C30CF7004CC887 /* NewCustomViewController.xib in Resources */,
 				C27F370C25C9A8D1004CC887 /* TicketDetailInfoCollectionViewCell.xib in Resources */,
 				C27F367A25C99801004CC887 /* ObjectNewController.xib in Resources */,
+				C27F374625CAFAF5004CC887 /* CreatCV.xib in Resources */,
 				C27F36FF25C9A4F1004CC887 /* MenuCollectionViewCell.xib in Resources */,
 				C27F367225C99722004CC887 /* SplashViewController.xib in Resources */,
 				C27F36E025C9A425004CC887 /* SaleDashboard.xib in Resources */,

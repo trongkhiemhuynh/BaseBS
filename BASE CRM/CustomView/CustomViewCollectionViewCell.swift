@@ -9,9 +9,22 @@
 import UIKit
 
 let arrayText = ["equals","not equal to","is empty", "is not empty"]
-let dictPrefixText = ["equals": "$eq","not equal to":"$eq","is empty":"$eq","is not empty":"$eq"]
+
 let arrayNumber = ["equals", "not equal to","less than","greater than","less or equal","greater or equal","is empty","is not empty"]
 let arrayDate = ["equals", "not equal to","between","is empty","is not empty"]
+
+//let dictPrefixNumber = ["equals": "$eq","not equal to":"$ne","less than":"$lt","greater than":"$gt","less or equal":"$le","greater or equal":"$ge","is empty":"$eq","is not empty":"$ne"]
+//let dictPrefixText = ["equals": "$eq","not equal to":"$ne","between":"$be","is not empty":"$ne", "is empty":"$eq"]
+let dictPrefix = ["equals": "$eq",
+                  "not equal to":"$ne",
+                  "is empty":"$eq",
+                  "is not empty":"$ne",
+                  "less than":"$lt",
+                  "greater than":"$gt",
+                  "less or equal":"$le",
+                  "greater or equal":"$ge",
+                  "between":"$be"
+]
 
 class CustomViewCollectionViewCell: UICollectionViewCell {
     
@@ -28,8 +41,9 @@ class CustomViewCollectionViewCell: UICollectionViewCell {
     var arrFields: [Any]?
     var fieldCustom: FieldCustomView?
     var dict: [String:Any] = [:]
+    var dictData: [Int: Any] = [:]
     
-    var handler: (([String:Any]) -> ())?
+    var handler: (([Int:Any]) -> ())?
     
     var deleteHandler: ((Int) -> ())?
     var index: Int!
@@ -41,11 +55,7 @@ class CustomViewCollectionViewCell: UICollectionViewCell {
         tf.addTarget(self, action: #selector(changedText(_:)), for: .editingChanged)
     }
     
-    @objc func changedText(_ textField: UITextField) {
-        self.dict["value"] = [prefix: textField.text]
-        
-        handler!(dict)
-    }
+    
     
     @IBAction func onColum() {
 //        loadColumnAvailable()
@@ -59,8 +69,11 @@ class CustomViewCollectionViewCell: UICollectionViewCell {
                 let obj = arr[index]
                 self.fieldCustom = obj
                 self.dict["id_field"] = obj.id
-                self.dict["index"] = self.index
+//                self.dict["index"] = self.index
+                
                 print(obj.type)
+                self.dict["name_column"] = obj.name
+                
                 self.btnColum.setTitle(obj.name, for: .normal)
             }
         }
@@ -70,25 +83,39 @@ class CustomViewCollectionViewCell: UICollectionViewCell {
         
         if let o = fieldCustom {
             
-            var array = arrayDate
+            var array: [String] = []
             
-//            self.dict["type"] = o.type
+            self.dict["type"] = o.type
 //
-//            if (o.type == "text") {
-//                // handler()
-//                array = arrayText
-//            } else if (o.type == "number") {
-//                array = arrayNumber
-//            }
-            
             array = arrayText
             
+            if (o.type == TypeFieldNewObject.number.rawValue) {
+                array = arrayNumber
+            } else if o.type == TypeFieldNewObject.date.rawValue || o.type == TypeFieldNewObject.datelocal.rawValue {
+                array = arrayDate
+            }
+            
             showDropDown(below: self.btnEqual, dataSource: array) { (index) in
-                self.prefix = dictPrefixText[array[index]]!
-                self.btnEqual.setTitle(array[index], for: .normal)
+                let nameEqual = array[index]
+                
+                self.prefix = dictPrefix[nameEqual]!
+                self.btnEqual.setTitle(nameEqual, for: .normal)
+                self.dict["name_equal"] = nameEqual
+                
+                if nameEqual == "is empty" || nameEqual == "is not empty" {
+                    self.dict["value"] = [self.prefix: ""]
+                    self.tf.isUserInteractionEnabled = false
+                    self.tf.backgroundColor = .lightGray
+                    self.dictData[self.index] = self.dict
+                    self.handler!(self.dictData)
+                }
             }
         }
         
+    }
+    
+    @objc func changedText(_ textField: UITextField) {
+        self.dict["value"] = [prefix: textField.text]
     }
     
 //    func update() {
@@ -123,7 +150,8 @@ extension CustomViewCollectionViewCell: XibInitalization {
 
 extension CustomViewCollectionViewCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        dictData[self.index] = self.dict
+        handler!(dictData)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

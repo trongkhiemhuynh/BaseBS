@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CustomViewCollectionViewCell" customModule="BaseBS_CRM" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CustomViewCollectionViewCell" customModule="BASE_CRM" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="421" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -66,8 +66,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubs-0l-xls">
                                         <rect key="frame" x="216" y="0.0" width="147" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGX-sQ-BSS">
-                                                <rect key="frame" x="8" y="8" width="131" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGX-sQ-BSS">
+                                                <rect key="frame" x="8" y="9.5" width="131" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="tIQ-Ex-Nah"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -78,9 +81,8 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="IGX-sQ-BSS" firstAttribute="leading" secondItem="ubs-0l-xls" secondAttribute="leading" constant="8" id="8Hu-eJ-iV6"/>
-                                            <constraint firstAttribute="bottom" secondItem="IGX-sQ-BSS" secondAttribute="bottom" constant="8" id="NSB-VI-dUR"/>
+                                            <constraint firstItem="IGX-sQ-BSS" firstAttribute="centerY" secondItem="ubs-0l-xls" secondAttribute="centerY" id="E1t-Fk-cFx"/>
                                             <constraint firstAttribute="trailing" secondItem="IGX-sQ-BSS" secondAttribute="trailing" constant="8" id="bao-j8-p3o"/>
-                                            <constraint firstItem="IGX-sQ-BSS" firstAttribute="top" secondItem="ubs-0l-xls" secondAttribute="top" constant="8" id="hmX-We-rfy"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhB-zp-sjf">

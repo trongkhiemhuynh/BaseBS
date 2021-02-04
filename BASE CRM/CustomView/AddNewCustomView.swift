@@ -50,18 +50,29 @@ class AddNewCustomView: UIView {
         }
     }
     
-    var objectId: String!
+    
 
     var countAllCondition: Int = 1
     var countAnyCondition: Int = 1
     
+    var objectId: String!
     var dictRequest: [String: Any] = [:]
     var arrayModel: [Any]?
     var arrShowField: [Any] = []
     
     var dictAllCells: [Int: Any] = [:]
     var dictAnyCells: [Int: Any] = [:]
-
+    
+    var arrAndFilter: [Any] = []
+    var arrOrFilter: [Any] = []
+    var arrLinkAndFilter: [Any] = []
+    var arrLinkOrFilter: [Any] = []
+    var arrMetaAndFilter: [Any] = []
+    var arrMetaOrFilter: [Any] = []
+    
+    var arrAll: [Any] = []
+    var arrAny: [Any] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         print("awakeFromNib")
@@ -89,9 +100,9 @@ class AddNewCustomView: UIView {
         var name: String = ""
         
         if indexPath.section == 0 {
-            name = "All condition"
+            name = "All condition (All conditions must be met)"
         } else {
-            name = "Any condition"
+            name = "Any condition (At least one of conditions must be met)"
         }
 
         header?.backgroundColor = Color.BackgroundListColor()
@@ -142,31 +153,41 @@ class AddNewCustomView: UIView {
     }
     
     @IBAction func onSave() {
-        guard let nameView = tfViewName.text, !nameView.isEmpty else { return }
+
+        if verify() {
+            getShowField()
+            
+            print(objectId)
+            let dictFilter = [kAndFilter:arrAndFilter, kOrFilter: arrOrFilter]
+            
+            let arrMetaData: [String] = []
+            let dictLinkObj = [kAndFilter:arrLinkAndFilter, kOrFilter: arrLinkOrFilter]
+            let dictMeta = [kAndFilter:arrMetaAndFilter, kOrFilter: arrMetaOrFilter]
+            
+            
+            var dictData: [String: Any] = [:]
+            dictData[kViewName] = tfViewName.text!
+            dictData[kFilterCondition] = dictFilter
+            dictData[kShowField] = arrShowField
+            dictData[kMetadata] = arrMetaData
+            dictData[kIsDefault] = isSelectDefault
+            dictData[kLinkingObjCondition] = dictLinkObj
+            dictData[kMetaFilter] = dictMeta
+            dictData["object_id"] = objectId
+            //        dictRequest[kData] = dictData
+            print(dictData)
+            //        Networking.shared.creatCustomView(dictRequest: dictData)
+        } else {
+            controller?.showError(title: "ALERT!", message: "Please input required field!")
+        }
+    }
+    
+    private func verify() -> Bool {
+        if tfViewName.text!.isEmpty {
+            return false
+        }
         
-        getShowField()
-        
-        print(objectId)
-        var dictFilter = [kAndFilter:[], kOrFilter: []]
-        
-        var arrMetaData: [String] = []
-        var isDefault = false
-        var dictLinkObj = [kAndFilter:[], kOrFilter: []]
-        var dictMeta = [kAndFilter:[], kOrFilter: []]
-        
-        
-        var dictData: [String: Any] = [:]
-        dictData[kViewName] = nameView
-        dictData[kFilterCondition] = dictFilter
-        dictData[kShowField] = arrShowField
-        dictData[kMetadata] = arrMetaData
-        dictData[kIsDefault] = isDefault
-        dictData[kLinkingObjCondition] = dictLinkObj
-        dictData[kMetaFilter] = dictMeta
-        dictData["object_id"] = objectId
-//        dictRequest[kData] = dictData
-        print(dictData)
-//        Networking.shared.creatCustomView(dictRequest: dictData)
+        return true
     }
     
     private func getShowField() {
@@ -207,37 +228,78 @@ extension AddNewCustomView: UICollectionViewDataSource {
         if indexPath.section == 0 {
             if indexPath.row == countAllCondition - 1 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActionCollectionViewCell.identifier, for: indexPath) as! AddActionCollectionViewCell
-//                let cell = AddActionCollectionViewCell.xibInstance()
                 
                 cell.handler = { [weak self] in
                     self?.countAllCondition += 1
-//                    self?.hAll.constant += hAdd
-                    self?.cv.reloadData()
+                    //                    self?.hAll.constant += hAdd
+//                    self?.cv.reloadItems(at: [IndexPath])
                 }
-                cell.backgroundColor = .lightGray
-
+                cell.backgroundColor = .red
+                
                 return cell
             }
 
-            
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomViewCollectionViewCell.identifier, for: indexPath) as! CustomViewCollectionViewCell
-//            if let cell = dictAllCells[indexPath.row] as? CustomViewCollectionViewCell {
-//                return cell
-//            }
-            
-            
-//            let cell = CustomViewCollectionViewCell.xibInstance()
-            cell.index = indexPath.row
-            dictAllCells[indexPath.row] = cell
-            
-            cell.objectId = objectId
-            cell.sView = self
-            cell.arrFields = arrayModel
 
-            cell.handler = { d in
-                print(d)
+            cell.index = indexPath.row
+//            dictAllCells[indexPath.row] = cell
+            
+//            cell.objectId = objectId
+//            cell.sView = self
+            cell.arrFields = arrayModel
+            
+            arrAll.forEach { (item) in
+                if let i = item as? [Int: Any] {
+                    if i.keys.first == indexPath.row {
+                        if let d = i.values.first as? [String: Any] {
+                            cell.btnColum.setTitle(d["name_column"] as! String, for: .normal)
+                            cell.btnEqual.setTitle(d["name_equal"] as! String, for: .normal)
+                            if let dict = d["value"] as? [String:String] {
+                                cell.tf.text = dict.values.first
+                            }
+                        }
+                        
+                    }
+                    
+                    return
+                }
+                
             }
+            
+            cell.handler = { dict in
+//                print(d)
+                
+                
+                var count = 0
+                
+                self.arrAll.forEach { (item) in
+                    if let i = item as? [Int: Any] {
+                        if i.keys.first == dict.keys.first {
+                            self.arrAll.remove(at: count)
+                            return
+                        }
+                    }
+                    
+                    count += 1
+                }
+                
+                self.arrAll.append(dict)
+                
+                if let d = dict[indexPath.row] as? [String: Any] {
+                    if let type = d["type"] as? String {
+                        
+                        let dict  = ["value":d["value"],"id_field":d["id_field"],"type": d["type"]]
+                        
+                        if type == TypeFieldNewObject.linkObject.rawValue {
+                            self.arrLinkAndFilter.append(dict)
+                        } else if type == "metaData" {
+                            self.arrMetaAndFilter.append(dict)
+                        } else {
+                            self.arrAndFilter.append(dict)
+                        }
+                    }
+                }
+             }
             
             cell.deleteHandler = { index in
                 print(indexPath.row)
@@ -247,30 +309,24 @@ extension AddNewCustomView: UICollectionViewDataSource {
                 
                 self.cv.reloadData()
             }
-
+            
             return cell
         } else {
             if indexPath.row == countAnyCondition - 1 {
-//                let cell = AddActionCollectionViewCell.xibInstance()
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddActionCollectionViewCell.identifier, for: indexPath) as! AddActionCollectionViewCell
+                cell.backgroundColor = .blue
+                
                 cell.handler = { [weak self] in
                     self?.countAnyCondition += 1
-//                    self?.hAny.constant += hAdd
                     self?.cv.reloadData()
                 }
                 return cell
             }
-
-//            if let cell = dictAnyCells[indexPath.row] as? CustomViewCollectionViewCell {
-//                return cell
-//            }
-//
-//
-//            let cell = CustomViewCollectionViewCell.xibInstance()
-//            dictAnyCells[indexPath.row] = cell
+            
+            //Condition cell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomViewCollectionViewCell.identifier, for: indexPath) as! CustomViewCollectionViewCell
             cell.objectId = objectId
-
+            
             cell.deleteHandler = { index in
                 print(indexPath.row)
                 print(indexPath.section)
@@ -286,7 +342,7 @@ extension AddNewCustomView: UICollectionViewDataSource {
 extension AddNewCustomView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: self.cv.frame.width, height: 70)
+        return CGSize(width: self.cv.frame.width, height: 69)
     }
 }
 
